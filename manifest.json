@@ -1,0 +1,14 @@
+{
+	"name": "SLScoreBerekener",
+	"version": "1.0",
+	"manifest_version": 2,
+
+	"description": "Calculate the result of the score",
+
+	"content_scripts": [
+		{
+			"matches": ["*://*.smartschool.be/Grades"],
+			"js": ["index.js"]
+		}
+	]
+}
