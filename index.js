@@ -1,6 +1,11 @@
 console.log('SUp');
 boolean isGridActive = false;
 
+
+$(document).arrive(".smscMainBlockContainer", function() {
+	$(this).remove();
+})
+
 $(document).arrive(".smscMainBlockContainer", function() {
 	const smscContainer = $(this);
 	console.log('Hey');
