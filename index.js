@@ -7,24 +7,28 @@ $(document).arrive('.smscMainBlockContainer', function() {
 	const smscContainer = $(this);
 	console.log('Hey');
 
-	tabsClickMonitor();
+	initializeSideBar();
 });
 
 
 function initializeSideBar() {
-	let sidebar = $('.smscToolbar').children();
-	for (int i = 0; i < sidebar.length; i++) {
-		let sidebarElem = $(sidebar[i]);
-		if (sidebarElem.hasClass('icon_evals')) {
-			sidebarElem.click(function() {
-				isSideBarGridActive = true;
-			});
-		} else {
-			sidebarElem.click(function() {
-				isSideBarGridActive = false;
-			});
+		let sidebar = $('.smscToolbar').children();
+		for (let i = 0; i < sidebar.length; i++) {
+			let sidebarElem = $(sidebar[i]);
+			console.log(sidebarElem.hasClass('icon_evals'))
+			if (sidebarElem.hasClass('icon_evals')) {
+				sidebarElem.click(function() {
+					isSideBarGridActive = true;
+					console.log("Sidebar!");
+				});
+			} else {
+				sidebarElem.click(function() {
+					isSideBarGridActive = false;
+				});
+			}
 		}
-	}
+
+	});
 }
 
 
@@ -42,7 +46,5 @@ function tabsClickMonitor() {
 				isGridActive = false;
 			});
 		}
-
-		console.log(`The tab is ${isGridActive}`);
 	}
 }
