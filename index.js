@@ -1,12 +1,9 @@
-console.log('LOL');
 let isGridActive = false;
 let isSideBarGridActive = false;
 
 
 $(document).arrive('.smscMainBlockContainer', function() {
 	const smscContainer = $(this);
-	console.log('Hey');
-
 	initializeSideBar();
 });
 
@@ -15,11 +12,10 @@ function initializeSideBar() {
 		let sidebar = $('.smscToolbar').children();
 		for (let i = 0; i < sidebar.length; i++) {
 			let sidebarElem = $(sidebar[i]);
-			console.log(sidebarElem.hasClass('icon_evals'))
 			if (sidebarElem.hasClass('icon_evals')) {
 				sidebarElem.click(function() {
 					isSideBarGridActive = true;
-					console.log("Sidebar!");
+					tabsClickMonitor();
 				});
 			} else {
 				sidebarElem.click(function() {
@@ -27,8 +23,6 @@ function initializeSideBar() {
 				});
 			}
 		}
-
-	});
 }
 
 
